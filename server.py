@@ -10,9 +10,7 @@ def start_service():
 
     dispatcher.connect('food_get', '/food', controller = foodController, action = 'GET_KEY', conditions = dict(method=['GET']))
 
-    dispatcher.connect('pokemon_options', '/pokemon/', controller=optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
-    dispatcher.connect('pokemon_key_options', '/pokemon/:pokemon_id', controller=optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
-
+    dispatcher.connect('food_options', '/food/', controller=optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
     conf = {
         'global' : {
             'server.thread_pool': 5,
