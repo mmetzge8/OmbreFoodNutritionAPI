@@ -6,4 +6,4 @@ class _food_database:
         self.food_names = dict()
 
     def get_foods(self, foodData):
-        f = open(food)
+        f = json.load(foodData)
