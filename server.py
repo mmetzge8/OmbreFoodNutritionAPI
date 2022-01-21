@@ -4,7 +4,7 @@ from FoodController import FoodController
 def start_service():
     dispatcher = cherrypy.dispatch.RoutesDispatcher()
 
-    fdb = _pokemon_database()
+    fdb = _food_database()
 
     foodController = FoodController(fdb = fdb)
 
