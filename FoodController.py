@@ -8,10 +8,20 @@ class FoodController(object):
         if fdb is None:
             self.fdb = _food_database()
         else:
-            self.fdb = _food_database
+            self.fdb = fdb
 
         self.fdb.load_food('food_data.json')
 
 
     def GET_KEY(self):
         output = {'result' : 'success'}
+        output['foods'] = []
+
+        try:
+            foods = self.fdb.get_foods()
+            output['foods'].append(foods)
+        except Exception as ex:
+            output['result'] = 'error'
+            output['message'] = str(ex)
+
+        return json.dumps(output)

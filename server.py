@@ -1,5 +1,6 @@
 import cherrypy
 from FoodController import FoodController
+from food_library import _food_database
 
 def start_service():
     dispatcher = cherrypy.dispatch.RoutesDispatcher()
