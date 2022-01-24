@@ -8,20 +8,18 @@ class _food_database:
     def load_food(self, foodData):
         f = open(foodData)
         data = json.load(f)
-        self.food_names[fid] = data['report']['foods'][1]
+        for i in range(data['report']['end']):
+            self.food_names[data['report']['foods'][i]["name"]] = data['report']['foods'][i]['nutrients']
 
-    def get_food(self, fid):
-        try:
-            fname = self.food_names[fid]
-        except Exception as ex:
-            fname = None
-        return fname
+    def get_foods(self):
+        return self.food_names
 
 
 if __name__ == "__main__":
     fdb = _food_database()
 
+
     fdb.load_food('food_data.json')
 
-    food = fdb.get_food('09002')
+    food = fdb.get_foods()
     print(food)
