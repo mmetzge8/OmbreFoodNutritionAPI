@@ -1,14 +1,14 @@
 import cherrypy
-#from FoodController import FoodController
+from FoodController import FoodController
 
 def start_service():
     dispatcher = cherrypy.dispatch.RoutesDispatcher()
 
-    #fdb = _food_database()
+    fdb = _food_database()
 
-    #foodController = FoodController(fdb = fdb)
+    foodController = FoodController(fdb = fdb)
 
-#    dispatcher.connect('food_get', '/food', controller = foodController, action = 'GET_KEY', conditions = dict(method=['GET']))
+    dispatcher.connect('food_get', '/food', controller = foodController, action = 'GET_KEY', conditions = dict(method=['GET']))
 
     dispatcher.connect('food_options', '/food/', controller = optionsController, action='OPTIONS', conditions=dict(method=['OPTIONS']))
     conf = {
