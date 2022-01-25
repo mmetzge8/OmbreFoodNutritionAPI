@@ -1,5 +1,6 @@
 console.log("Page Loaded!")
 
+// Set up onClicks for Submit and Clear Buttons
 var clearButton = document.getElementById('bsr-clear-button');
 clearButton.onmouseup = clearSearch;
 var submitButton = document.getElementById('bsr-submit-button');
@@ -9,6 +10,7 @@ function getNutrientInfo(){
   makeNetworkCallToFoodApi();
 }
 
+// Make Call to the Python Server
 function makeNetworkCallToFoodApi(){
   var url = "http://localhost:8080/food";
 
@@ -28,6 +30,7 @@ function makeNetworkCallToFoodApi(){
   xhr.send(null);
 }
 
+// Modify the API Output
 function updateOutputWithResponse(response_text){
   var response_json = JSON.parse(response_text);
 
@@ -60,7 +63,7 @@ function updateOutputWithResponse(response_text){
   var checks = Array(150).fill(0);
 
 
-  searchOutput.innerHTML = "";
+  searchOutput.innerHTML = ""; // Reset Text so it Refreshes
 
   for(let i = 0; i < Object.keys(response_json["foods"][0]).length; i++){
     if (alcoholhighlow == "greater"){
@@ -150,7 +153,7 @@ function updateOutputWithResponse(response_text){
       }
     }
 
-    if(checks[i] == 8){
+    if(checks[i] == 8){ // Display Results
       searchOutput.innerHTML += "<br>" + response_json["foods"][0][i]["name"] + "<br>" + "&emsp;" + "&emsp;" + "Alcohol: " + response_json["foods"][0][i]["nutrients"][0]["value"] + " g" + "&emsp;" + "&emsp;" + "Protein: " + response_json["foods"][0][i]["nutrients"][1]["value"] + " g"
       + "<br>" + "&emsp;" + "&emsp;" + "Lipids: " + response_json["foods"][0][i]["nutrients"][2]["value"] + " g" + "&emsp;" + "&emsp;" + "Carbs: " + response_json["foods"][0][i]["nutrients"][3]["value"] + " g" + "<br>" + "&emsp;" + "&emsp;" + "Sugar: " + response_json["foods"][0][i]["nutrients"][4]["value"] + " g"
       + "&emsp;" + "&emsp;" + "Ash: " + response_json["foods"][0][i]["nutrients"][5]["value"] + " g" + "<br>" + "&emsp;" + "&emsp;" + "Energy: " + response_json["foods"][0][i]["nutrients"][6]["value"] + " kcal" + "&emsp;" + "&emsp;" + "Fiber: " + response_json["foods"][0][i]["nutrients"][7]["value"] + " g" + "<br>";
@@ -160,6 +163,7 @@ function updateOutputWithResponse(response_text){
 
 }
 
+// Reset Screen on Clear
 function clearSearch(){
   var searchOutput = document.getElementById('searchOutput');
   searchOutput.innerHTML = "";
