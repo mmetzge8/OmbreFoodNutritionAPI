@@ -27,7 +27,12 @@ This project contains one controller: /WebServer/FoodController.py.
 
 ### User Interaction
 
+1. Ensure that python is downloaded, these programs were created on python 3.9.6.  Addtionally the cherrypy library of python is needed which can be obtained by running *pip install CherryPy* as seen on this site https://pypi.org/project/CherryPy/ .
+2. Clone the repository on your own machine.
+3. In a terminal, go to the folder /OmbreFoodNutritionAPI/WebServer, and run the command *python server.py* .
+4. Open the index.html file into your browser and you should be able to interact with the API.
+5. Simply input the values of each nutrient you would like (greater or less than), then press submit and all foods matching the given criteria should appear below.
 
-### Video Links
+### Screenshots
 
 
