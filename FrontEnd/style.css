@@ -1,0 +1,12 @@
+body {
+  background-color: powderblue;
+}
+h1 {
+  font-family: 'Courier New', monospace;
+  color: black;
+  padding-left: 20px;
+}
+p {
+  color: black;
+  padding-left: 50px;
+}
