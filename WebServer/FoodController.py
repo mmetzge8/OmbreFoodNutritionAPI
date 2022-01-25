@@ -10,9 +10,9 @@ class FoodController(object):
         else:
             self.fdb = fdb
 
-        self.fdb.load_food('food_data.json')
+        self.fdb.load_food('food_data.json') # Load in the JSON data provided on initialization
 
-
+    # Modify and Get our data from the server and send to client requesting
     def GET_KEY(self):
         output = {'result' : 'success'}
         output['foods'] = []

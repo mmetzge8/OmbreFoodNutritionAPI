@@ -5,6 +5,7 @@ from food_library import _food_database
 def start_service():
     dispatcher = cherrypy.dispatch.RoutesDispatcher()
 
+    # Create the food database
     fdb = _food_database()
 
     foodController = FoodController(fdb = fdb)
@@ -16,7 +17,7 @@ def start_service():
         'global' : {
             'server.thread_pool': 5,
             'server.socket_host' : 'localhost',
-            'server.socket_port': 8080  # put port here
+            'server.socket_port': 8080  # port
         },
     '/': {
         'request.dispatch' : dispatcher,
