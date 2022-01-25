@@ -9,7 +9,15 @@ class _food_database:
         f = open(foodData)
         data = json.load(f)
         for i in range(data['report']['end']):
-            self.food_names[data['report']['foods'][i]["name"]] = data['report']['foods'][i]['nutrients']
+            for j in range(len(data['report']['foods'][i]['nutrients'])):
+                if data['report']['foods'][i]['nutrients'][j]["value"] == "--":
+                    data['report']['foods'][i]['nutrients'][j]["value"] = "0.0"
+
+        for i in range(data['report']['end']):
+            self.food_names[i] = data['report']['foods'][i]
+    #        self.food_names[data['report']['foods'][i]["name"]] = data['report']['foods'][i]['nutrients']
+
+
 
     def get_foods(self):
         return self.food_names

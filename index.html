@@ -6,13 +6,86 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Food Nutrition API</title>
+  <link rel="shortcut icon" type="image/png" href="/Users/mattm/Downloads/food_favicon.png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  
+  <h1>Find My Foods: </h1>
+  <div class="container">
+    <form class="bsr-form" action=''>
+      <label>Alcohol, ethyl:</label>
+      <select id="alcoholhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="alcoholNum" type="number" value="0.0" step="0.01" min="0">
+      <label>g (grams)</label>
+      <br></br>
+      <label>Protein:</label>
+      <select id="proteinhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="proteinNum" type="number" value="0.0" step="0.01" min="0">
+      <label>g (grams)</label>
+      <br></br>
+      <label>Total lipid (fat):</label>
+      <select id="lipidhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="lipidNum" type="number" value="0.0" step="0.01" min="0">
+      <label>g (grams)</label>
+      <br></br>
+      <label>Carbohydrate:</label>
+      <select id="carbhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="carbNum" type="number" value="0.0" step="0.01" min="0">
+      <label>g (grams)</label>
+      <br></br>
+      <label>Sugars, total:</label>
+      <select id="sugarhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="sugarNum" type="number" value="0.0" step="0.01" min="0">
+      <label>g (grams)</label>
+      <br></br>
+      <label>Ash:</label>
+      <select id="ashhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="ashNum" type="number" value="0.0" step="0.01" min="0">
+      <label>g (grams)</label>
+      <br></br>
+      <label>Energy:</label>
+      <select id="energyhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="energyNum" type="number" value="0.0" step="0.01" min="0">
+      <label>kcal</label>
+      <br></br>
+      <label>Fiber, total dietary:</label>
+      <select id="fiberhighlow">
+        <option value = "greater">Greater than</option>
+        <option value = "less">Less than</option>
+      </select>
+      <input id="fiberNum" type="number" value="0.0" step="0.01" min="0">
+      <label>g (grams)</label>
+      <br></br>
+      <button type="reset" class="btn btn-default" id="bsr-clear-button">Clear</button>
+      <button type="button" class="btn btn-primary" id="bsr-submit-button">Submit</button>
+    </form>
+
+    <p id="searchOutput">
+    </p>
 
   <script type="text/javascript" src="main.js">
   </script>
