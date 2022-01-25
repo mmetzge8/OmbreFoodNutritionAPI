@@ -35,4 +35,5 @@ This project contains one controller: /WebServer/FoodController.py.
 
 ### Screenshots
 
+Some Screenshots are available in the /FrontEnd/images folder.
 
